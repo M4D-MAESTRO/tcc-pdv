@@ -1,5 +1,5 @@
-<h1 align="center">Projeto Integrador em Arquitetura de Software Distribuído</h1>
-<h3 align="center">Sisttema para gestão de Assinaturas;</h3>
+<h1 align="center">TCC - Ciência da Computação</h1>
+<h3 align="center">Sisttema de PDV Web & Mobile;</h3>
 
 <h5 align="center">Capacidades implementadas:</h5>
 
