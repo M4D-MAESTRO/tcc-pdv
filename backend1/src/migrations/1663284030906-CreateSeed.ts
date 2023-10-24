@@ -1,5 +1,5 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
-import { hash } from 'bcrypt';
+import { hash } from 'bcryptjs';
 import { v4 as uuidV4 } from "uuid";
 
 
@@ -37,18 +37,6 @@ export class CreateSeed1663284030906 implements MigrationInterface {
         `);
         } catch (e) {
             console.error(`Erro ao criar o patrimonio do servidor: ${e.message}`)
-        }
-
-        try {
-            await queryRunner.query(`
-        insert into despesas(id, nome, descricao, user_registrou_id) values('85b4162e-7f88-40c2-8c05-f087748034ff','Água', 'Despesa relacionada ao pagamento do uso de água encanada','${user_id}');
-        insert into despesas(id, nome, descricao, user_registrou_id) values('cda7b05d-dc4c-48e4-b49d-175562de49b9','Luz', 'Despesa relacionada ao pagamento do uso de eletrecidade','${user_id}');
-        insert into despesas(id, nome, descricao, user_registrou_id) values('c7c66d67-23db-432c-8a94-dca2d9eca4ce','Aluguel', 'Despesa relacionada ao pagamento do aluguel da loja','${user_id}');
-        insert into despesas(id, nome, descricao, user_registrou_id) values('1ec7d734-c7c7-483c-a70c-e0afb060a5cc','Internet', 'Despesa relacionada ao pagamento da internet','${user_id}');
-        insert into despesas(id, nome, descricao, user_registrou_id) values('ac764a52-db16-4e02-afac-7e96ace73f86','Gás', 'Despesa relacionada ao pagamento do uso de gás encanado','${user_id}');`)
-
-        } catch (e) {
-            console.error(`Erro ao criar as despesas: ${e.message}`)
         }
 
         try {

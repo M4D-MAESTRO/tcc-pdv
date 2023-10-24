@@ -1,7 +1,7 @@
 
 import { Injectable, Logger } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { compare, hash } from "bcrypt";
+import { compare, hash } from "bcryptjs";
 import { v4 as uuidV4 } from "uuid";
 
 import { DayjsDateProvider } from '../../shared/utils/daysDateUtils';

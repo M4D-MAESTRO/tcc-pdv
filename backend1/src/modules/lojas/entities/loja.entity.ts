@@ -37,17 +37,7 @@ export class Loja {
     @Column()
     descricao: string;
 
-    @ApiProperty({ description: "Valor atual na tesouraria da loja", example: 10000 })
-    @Column()
-    valor_tesouraria: number;
-
-    @ApiProperty({ description: "Valor previsto para ser recebido na tesouraria da loja", example: 1000 })
-    @Column()
-    valor_receber: number;
-
-    @ApiProperty({ description: "Valor previsto para ser debitado na tesouraria da loja", example: 20000 })
-    @Column()
-    valor_saida: number;
+   
 
     @ApiProperty({ description: "Usuário que cadastrou a loja", type: () => User })
     @ManyToOne(() => User)

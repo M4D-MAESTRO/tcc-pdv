@@ -1,4 +1,4 @@
-import { hash } from "bcrypt";
+import { hash } from "bcryptjs";
 import { MigrationInterface, QueryRunner, TableColumn, TableForeignKey } from "typeorm"
 
 export class AlterBullJobsAddColumns1665963841642 implements MigrationInterface {

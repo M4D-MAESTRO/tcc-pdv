@@ -51,8 +51,6 @@ export class PedidosController {
   @ApiResponse({ status: 200, isArray: true, type: PageDto })
   @ApiResponse({ status: 403, description: 'Proibido.' })
   async findAll(@Query() dto: SuperPageOptionsDto, @Query() filterDto: SearchPedidoDto) {
-    console.log(dto);
-    console.log(filterDto);
     return this.pedidosService.findAll(dto, filterDto);
   }
 

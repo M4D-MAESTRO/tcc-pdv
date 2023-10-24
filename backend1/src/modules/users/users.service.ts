@@ -4,7 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { REQUEST } from '@nestjs/core';
 import { Request } from 'express';
 import { Repository } from 'typeorm';
-import { hash } from "bcrypt";
+import { hash } from "bcryptjs";
 import { v4 as uuidV4 } from "uuid";
 
 import { User } from './entities/user.entity';
@@ -49,10 +49,7 @@ export class UsersService {
     user.senha = await hash(generatedPassword, 8);
     user = await this.complementaInformacoes(user, dto);
 
-    if (dto.nivel_superior_id) {
-      const nivel_superior = await this.checkIfUserExists(dto.nivel_superior_id);
-      user.nivel_superior = nivel_superior;
-    }
+    
 
     const createdUser = await this.usersRepository.save(user) as User;
     delete createdUser.loja?.user_registrou;
@@ -103,10 +100,6 @@ export class UsersService {
     let user = await this.checkIfUserExists(id);
     user = await this.complementaInformacoesUpdate(user, dto);
 
-    if (dto.nivel_superior_id) {
-      const nivel_superior = await this.checkIfUserExists(dto.nivel_superior_id);
-      user.nivel_superior = nivel_superior;
-    }
 
     const updatedUser = await this.usersRepository.save(user) as User;
     delete updatedUser.loja?.user_registrou;

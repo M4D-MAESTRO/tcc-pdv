@@ -83,12 +83,6 @@ export class User {
     @JoinColumn({ name: "endereco_id" })
     endereco: Endereco;
 
-
-    @ApiPropertyOptional({ description: "Colaborador superior", type: () => User })
-    @OneToOne(() => User)
-    @JoinColumn({ name: 'nivel_superior_id' })
-    nivel_superior: User;
-
     @ApiProperty({ description: "Socket ID do Usuário", example: "123456789" })
     @Column()
     socket_id: string;

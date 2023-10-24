@@ -1,5 +1,5 @@
 import { client_pefil_id, loja_admin_id } from './../shared/constants/system.constant';
-import { hash } from "bcrypt";
+import { hash } from "bcryptjs";
 import { MigrationInterface, QueryRunner } from "typeorm"
 
 export class SeedCliente01673036618726 implements MigrationInterface {
